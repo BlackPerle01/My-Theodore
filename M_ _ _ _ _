@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Love You Mamali ❤️</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        overflow: hidden;
+        font-family: "Georgia", serif;
+        background:
+            radial-gradient(circle at center, #5c1025 0%, #250712 45%, #090107 100%);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    /* Soft background glow */
+    body::before {
+        content: "";
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background: rgba(255, 40, 100, 0.15);
+        border-radius: 50%;
+        filter: blur(100px);
+        animation: glow 4s infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+            transform: scale(0.8);
+            opacity: 0.4;
+        }
+        to {
+            transform: scale(1.2);
+            opacity: 0.8;
+        }
+    }
+
+    /* Main romantic card */
+    .container {
+        position: relative;
+        z-index: 5;
+        width: 90%;
+        max-width: 1200px;
+        min-height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .romantic-box {
+        text-align: center;
+        position: relative;
+        padding: 60px 80px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 150, 180, 0.25);
+        backdrop-filter: blur(10px);
+        box-shadow:
+            0 0 50px rgba(255, 0, 90, 0.25),
+            inset 0 0 30px rgba(255, 255, 255, 0.03);
+    }
+
+    .love-text {
+        font-size: 28px;
+        letter-spacing: 8px;
+        color: #ffb6c9;
+        text-shadow:
+            0 0 10px #ff4d79,
+            0 0 25px #ff174f;
+        margin-bottom: 12px;
+        animation: heartbeat 1.5s infinite;
+    }
+
+    .name {
+        font-size: clamp(55px, 10vw, 115px);
+        font-weight: bold;
+        letter-spacing: 12px;
+        color: #fff;
+        text-transform: uppercase;
+        text-shadow:
+            0 0 5px #fff,
+            0 0 15px #ff4d79,
+            0 0 30px #ff174f,
+            0 0 60px #e91e63;
+        animation: nameGlow 2s infinite alternate;
+    }
+
+    .heart-line {
+        margin-top: 25px;
+        font-size: 25px;
+        color: #ff8fab;
+        letter-spacing: 5px;
+    }
+
+    @keyframes heartbeat {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.08);
+        }
+    }
+
+    @keyframes nameGlow {
+        from {
+            text-shadow:
+                0 0 5px #fff,
+                0 0 15px #ff4d79,
+                0 0 30px #ff174f;
+        }
+        to {
+            text-shadow:
+                0 0 10px #fff,
+                0 0 25px #ff6b91,
+                0 0 50px #ff174f,
+                0 0 80px #e91e63;
+        }
+    }
+
+    /* Rose bouquets */
+    .bouquet {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 85px;
+        line-height: 1;
+        filter:
+            drop-shadow(0 0 8px #ff174f)
+            drop-shadow(0 0 20px rgba(255, 0, 80, 0.7));
+        animation: bouquetFloat 3s ease-in-out infinite;
+    }
+
+    .left-bouquet {
+        left: -120px;
+        transform: translateY(-50%) rotate(-12deg);
+    }
+
+    .right-bouquet {
+        right: -120px;
+        transform: translateY(-50%) rotate(12deg) scaleX(-1);
+        animation-delay: 1s;
+    }
+
+    @keyframes bouquetFloat {
+        0%, 100% {
+            margin-top: 0;
+        }
+        50% {
+            margin-top: -15px;
+        }
+    }
+
+    /* Floating hearts */
+    .heart {
+        position: absolute;
+        color: #ff4d79;
+        font-size: 20px;
+        animation: floatUp linear infinite;
+        opacity: 0;
+        z-index: 2;
+        text-shadow: 0 0 10px #ff174f;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(100vh) scale(0.5) rotate(0deg);
+            opacity: 0;
+        }
+
+        15% {
+            opacity: 1;
+        }
+
+        80% {
+            opacity: 0.8;
+        }
+
+        100% {
+            transform: translateY(-10vh) scale(1.2) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    /* Stars / sparkles */
+    .sparkle {
+        position: absolute;
+        color: #fff;
+        font-size: 15px;
+        animation: sparkle 2s infinite alternate;
+        z-index: 1;
+    }
+
+    @keyframes sparkle {
+        from {
+            opacity: 0.1;
+            transform: scale(0.5);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1.4);
+            text-shadow: 0 0 15px #fff;
+        }
+    }
+
+    /* Romantic footer */
+    .message {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #ffc1d1;
+        font-style: italic;
+        letter-spacing: 2px;
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+
+        .romantic-box {
+            padding: 50px 25px;
+            width: 95%;
+        }
+
+        .love-text {
+            font-size: 20px;
+            letter-spacing: 5px;
+        }
+
+        .name {
+            font-size: 48px;
+            letter-spacing: 6px;
+        }
+
+        .bouquet {
+            font-size: 55px;
+        }
+
+        .left-bouquet {
+            left: -25px;
+            top: 15%;
+        }
+
+        .right-bouquet {
+            right: -25px;
+            top: 85%;
+        }
+
+        .message {
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Rose bouquets -->
+<div class="bouquet left-bouquet">
+    💐🌹🌹
+</div>
+
+<div class="bouquet right-bouquet">
+    💐🌹🌹
+</div>
+
+<!-- Main content -->
+<div class="container">
+
+    <div class="romantic-box">
+
+        <div class="love-text">
+            ❤️ I LOVE YOU ❤️
+        </div>
+
+        <div class="name">
+            MAMALI
+        </div>
+
+        <div class="heart-line">
+            ♥︎ ────── 💕 ────── ♥︎
+        </div>
+
+        <div class="message">
+            You are the most beautiful part of my story ❤️
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Floating hearts -->
+<div class="heart" style="left:5%; animation-duration:8s; animation-delay:0s;">♥</div>
+<div class="heart" style="left:15%; animation-duration:10s; animation-delay:2s;">❤</div>
+<div class="heart" style="left:25%; animation-duration:7s; animation-delay:1s;">♥</div>
+<div class="heart" style="left:38%; animation-duration:11s; animation-delay:3s;">💕</div>
+<div class="heart" style="left:50%; animation-duration:8s; animation-delay:4s;">♥</div>
+<div class="heart" style="left:62%; animation-duration:12s; animation-delay:1s;">❤</div>
+<div class="heart" style="left:75%; animation-duration:9s; animation-delay:2s;">♥</div>
+<div class="heart" style="left:88%; animation-duration:10s; animation-delay:0s;">💕</div>
+<div class="heart" style="left:95%; animation-duration:7s; animation-delay:3s;">♥</div>
+
+<!-- Sparkles -->
+<div class="sparkle" style="top:12%; left:12%;">✦</div>
+<div class="sparkle" style="top:20%; left:82%;">✧</div>
+<div class="sparkle" style="top:75%; left:8%;">✦</div>
+<div class="sparkle" style="top:82%; left:90%;">✧</div>
+<div class="sparkle" style="top:10%; left:50%;">✦</div>
+<div class="sparkle" style="top:90%; left:45%;">✧</div>
+
+</body>
+</html>
