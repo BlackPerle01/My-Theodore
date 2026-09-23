@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#21050f">
+<title>For Mamali ♡</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --wine: #21050f;
+    --pink: #ff829e;
+    --hot: #ff315e;
+    --cream: #fff0e8;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    min-height: 100%;
+  }
+
+  body {
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: clamp(16px, 4vw, 48px);
+    color: var(--cream);
+    background: radial-gradient(
+      ellipse at 50% 48%,
+      #64132d 0%,
+      #3a0a1b 35%,
+      #21050f 72%,
+      #13030a 100%
+    );
+    font-family: Georgia, "Times New Roman", serif;
+  }
+
+  .scene {
+    position: relative;
+    width: min(100%, 980px);
+    min-height: min(90svh, 760px);
+    display: grid;
+    place-items: center;
+    isolation: isolate;
+  }
+
+  .stars,
+  .stars::before,
+  .stars::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .stars {
+    opacity: .85;
+    background-image:
+      radial-gradient(1px 1px at 8% 17%, #ffe6ec 98%, transparent),
+      radial-gradient(2px 2px at 77% 13%, #ffb6c9 98%, transparent),
+      radial-gradient(1px 1px at 92% 35%, #fff 98%, transparent),
+      radial-gradient(1.5px 1.5px at 17% 71%, #ffc6d2 98%, transparent),
+      radial-gradient(1px 1px at 84% 82%, #fff 98%, transparent),
+      radial-gradient(2px 2px at 35% 9%, #ff8eaa 98%, transparent),
+      radial-gradient(1px 1px at 63% 92%, #ffdce5 98%, transparent),
+      radial-gradient(1px 1px at 4% 48%, #fff 98%, transparent);
+  }
+
+  .stars::before {
+    background:
+      radial-gradient(2px 2px at 12% 39%, #ff89a3 98%, transparent),
+      radial-gradient(1px 1px at 29% 88%, #fff 98%, transparent),
+      radial-gradient(1px 1px at 70% 29%, #fff 98%, transparent),
+      radial-gradient(2px 2px at 96% 65%, #ffc1d0 98%, transparent);
+    animation: twinkle 3s ease-in-out infinite alternate;
+  }
+
+  .float {
+    position: absolute;
+    color: #ff8aa6;
+    text-shadow: 0 0 12px #ff3267, 0 0 30px #f20d4c;
+    animation: drift 5s ease-in-out infinite;
+  }
+
+  .f1 { left: 16%; top: 16%; font-size: 26px; }
+  .f2 { right: 14%; top: 25%; font-size: 18px; animation-delay: -2s; }
+  .f3 { left: 23%; bottom: 18%; font-size: 17px; animation-delay: -1s; }
+  .f4 { right: 20%; bottom: 16%; font-size: 29px; animation-delay: -3s; }
+
+  .roses {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(6px, 2vw, 20px);
+    filter: drop-shadow(0 0 13px #ff2c5b);
+    font-size: clamp(34px, 7vw, 66px);
+    line-height: 1;
+  }
+
+  .roses.left { left: 0; }
+  .roses.right {
+    right: 0;
+    transform: translateY(-50%) scaleX(-1);
+  }
+
+  .rose:nth-child(2) {
+    margin-left: clamp(13px, 3vw, 30px);
+    font-size: .78em;
+  }
+
+  .rose:nth-child(3) {
+    margin-left: 4px;
+    font-size: .9em;
+  }
+
+  .heart-shell {
+    --heart-w: min(69vw, 570px);
+    --heart-h: min(75svh, 590px);
+    width: var(--heart-w);
+    height: var(--heart-h);
+    position: relative;
+    display: grid;
+    place-items: center;
+    filter:
+      drop-shadow(0 0 9px #ff4c77)
+      drop-shadow(0 0 27px #df164c)
+      drop-shadow(0 0 66px #a90d39);
+    animation: pulse 3.6s ease-in-out infinite;
+  }
+
+  .heart-shell::before,
+  .heart-shell::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  .heart-shell::before {
+    background: linear-gradient(145deg, #ffbdc9, #fc416d 42%, #a20d39 100%);
+    clip-path: polygon(
+      50% 95%, 8% 57%, 2% 43%, 3% 29%, 10% 17%,
+      22% 12%, 34% 15%, 43% 24%, 50% 33%, 57% 24%,
+      66% 15%, 78% 12%, 90% 17%, 97% 29%, 98% 43%, 92% 57%
+    );
+  }
+
+  .heart-shell::after {
+    inset: 7px;
+    background: radial-gradient(
+      ellipse at 50% 43%,
+      rgba(117, 17, 48, .98),
+      rgba(47, 5, 21, .99) 72%
+    );
+    clip-path: polygon(
+      50% 95%, 8% 57%, 2% 43%, 3% 29%, 10% 17%,
+      22% 12%, 34% 15%, 43% 24%, 50% 33%, 57% 24%,
+      66% 15%, 78% 12%, 90% 17%, 97% 29%, 98% 43%, 92% 57%
+    );
+  }
+
+  .message {
+    position: relative;
+    z-index: 1;
+    width: 73%;
+    margin-top: -3%;
+    text-align: center;
+    text-shadow: 0 0 12px rgba(255, 102, 142, .3);
+  }
+
+  .eyebrow {
+    margin: 0 0 .55em;
+    font-size: clamp(13px, 2.5vw, 20px);
+    letter-spacing: .36em;
+    color: #ffd9df;
+  }
+
+  h1 {
+    margin: 0;
+    color: #fff0ed;
+    font-size: clamp(38px, 9vw, 81px);
+    line-height: .94;
+    letter-spacing: .04em;
+    font-weight: 600;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 23px #ff6283,
+      0 0 44px #fa1c55;
+  }
+
+  .rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    margin: clamp(13px, 3vw, 25px) 0 clamp(12px, 2.5vw, 21px);
+    color: #ffb6c5;
+    font-size: clamp(15px, 3vw, 22px);
+    text-shadow: 0 0 12px #ff315f;
+  }
+
+  .rule::before,
+  .rule::after {
+    content: "";
+    height: 1px;
+    width: min(23%, 95px);
+    background: linear-gradient(90deg, transparent, #ffc0ce);
+    box-shadow: 0 0 8px #ff7897;
+  }
+
+  .rule::after { transform: scaleX(-1); }
+
+  .subtitle {
+    margin: 0;
+    color: #f9d5dc;
+    font-size: clamp(12px, 2.2vw, 17px);
+    letter-spacing: .1em;
+    line-height: 1.6;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.025); }
+  }
+
+  @keyframes twinkle {
+    from { opacity: .28; }
+    to { opacity: 1; }
+  }
+
+  @keyframes drift {
+    0%, 100% { transform: translateY(0) rotate(-8deg); }
+    50% { transform: translateY(-13px) rotate(8deg); }
+  }
+
+  @media (max-width: 560px) {
+    .scene { min-height: 84svh; }
+
+    .heart-shell {
+      --heart-w: min(88vw, 430px);
+      --heart-h: min(72svh, 470px);
+    }
+
+    .roses {
+      font-size: clamp(27px, 9vw, 43px);
+      top: 78%;
+      gap: 4px;
+    }
+
+    .roses.left { left: 2%; }
+    .roses.right { right: 2%; }
+    .message { width: 72%; }
+    .eyebrow { letter-spacing: .28em; }
+  }
+
+  @media (max-height: 560px) and (min-width: 561px) {
+    .scene { min-height: 94svh; }
+
+    .heart-shell {
+      --heart-h: 88svh;
+      --heart-w: min(65vw, 520px);
+    }
+
+    .roses { font-size: 36px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; }
+  }
+</style>
+</head>
+<body>
+  <main class="scene" aria-label="A romantic message for Mamali">
+    <div class="stars" aria-hidden="true"></div>
+
+    <span class="float f1" aria-hidden="true">♥</span>
+    <span class="float f2" aria-hidden="true">♡</span>
+    <span class="float f3" aria-hidden="true">♥</span>
+    <span class="float f4" aria-hidden="true">♡</span>
+
+    <div class="roses left" aria-hidden="true">
+      <span class="rose">🌹</span>
+      <span class="rose">🌹</span>
+      <span class="rose">🌹</span>
+    </div>
+
+    <div class="roses right" aria-hidden="true">
+      <span class="rose">🌹</span>
+      <span class="rose">🌹</span>
+      <span class="rose">🌹</span>
+    </div>
+
+    <section class="heart-shell" aria-label="I love you, Mamali">
+      <div class="message">
+        <p class="eyebrow">I LOVE YOU</p>
+        <h1>MAMALI</h1>
+        <div class="rule" aria-hidden="true">♡</div>
+        <p class="subtitle">You are my heart, my love, my everything.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
